@@ -1,0 +1,770 @@
+{
+	"info": {
+		"_postman_id": "54621ebb-d5d2-442e-9278-ab4342832f05",
+		"name": "apino",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/entities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{api_host}}/entities",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"entities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/entities/:entity_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{api_host}}/entities/:entity_id",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"entities",
+						":entity_id"
+					],
+					"variable": [
+						{
+							"key": "entity_id",
+							"value": "1",
+							"description": "the id of the entity we want to get"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/entities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"entity\": {\n\t\t\"name\": \"user\",\n\t\t\"table_name\": \"users\",\n\t\t\"status\": \"pending\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{api_host}}/entities",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"entities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Entity - Add user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"entity\": {\n\t\t\"name\": \"user\",\n\t\t\"table_name\": \"users\",\n\t\t\"status\": \"pending\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{api_host}}/entities",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"entities"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "71"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 24 Nov 2018 11:57:00 GMT"
+						},
+						{
+							"key": "location",
+							"value": "/api/entities/1"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "2ll0qtco6fkr1g7bu00001c1"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"user\",\n        \"status\": \"pending\",\n        \"table_name\": \"users\"\n    }\n}"
+				},
+				{
+					"name": "Entity - Add Roles",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"entity\": {\n\t\t\"name\": \"role\",\n\t\t\"table_name\": \"roles\",\n\t\t\"status\": \"pending\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{api_host}}/entities",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"entities"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "71"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 24 Nov 2018 13:39:32 GMT"
+						},
+						{
+							"key": "location",
+							"value": "/api/entities/3"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "2ll163fn1qbfak4tfk000401"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"name\": \"role\",\n        \"status\": \"pending\",\n        \"table_name\": \"roles\"\n    }\n}"
+				},
+				{
+					"name": "Entity - Add permissions",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"entity\": {\n\t\t\"name\": \"permission\",\n\t\t\"table_name\": \"permissions\",\n\t\t\"status\": \"pending\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{api_host}}/entities",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"entities"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "83"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 24 Nov 2018 13:39:01 GMT"
+						},
+						{
+							"key": "location",
+							"value": "/api/entities/2"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "2ll161lvb50h4mv24k0003v1"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"permission\",\n        \"status\": \"pending\",\n        \"table_name\": \"permissions\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/entities/:entity_id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"entity\": {\n\t\t\"name\": \"user\",\n\t\t\"table_name\": \"users\",\n\t\t\"status\": \"approved\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{api_host}}/entities/:entity_id",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"entities",
+						":entity_id"
+					],
+					"variable": [
+						{
+							"key": "entity_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/entities/:entity_id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{api_host}}/entities/:entity_id",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"entities",
+						":entity_id"
+					],
+					"variable": [
+						{
+							"key": "entity_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/properties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{api_host}}/properties",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/properties/:property_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{api_host}}/properties/:property_id",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"properties",
+						":property_id"
+					],
+					"variable": [
+						{
+							"key": "property_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/properties",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"property\": {\n\t\t\"name\": \"permissions\",\n\t\t\"field_name\": \"permissions\",\n\t\t\"label\": \"Permissions\",\n\t\t\"status\": \"pending\",\n\t\t\"type\": \"has_many\",\n\t\t\"is_primary\": false,\n\t\t\"is_binary\": false,\n\t\t\"is_autogenerated\": false,\n\t\t\"is_unique\": false,\n\t\t\"options\": {\n\t\t\t\"references\": \"permissions\",\n\t\t\t\"on_delete\": \"delete_all\",\n\t\t\t\"on_update\": \"update_all\"\n\t\t},\n\t\t\"entity_id\": 3\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{api_host}}/properties",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"properties"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Property - Add user last name",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"property\": {\n\t\t\"name\": \"last_name\",\n\t\t\"field_name\": \"last_name\",\n\t\t\"label\": \"Last name\",\n\t\t\"status\": \"pending\",\n\t\t\"is_primary\": false, \n\t\t\"is_binary\": false, \n\t\t\"is_autogenerated\": false,\n\t\t\"is_unique\": false,\n\t\t\"entity_id\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{api_host}}/properties",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"properties"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "180"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 24 Nov 2018 13:16:26 GMT"
+						},
+						{
+							"key": "location",
+							"value": "/api/properties/2"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "2ll13iq4fid5dhtmog0002q1"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"field_name\": \"last_name\",\n        \"id\": 2,\n        \"is_autogenerated\": false,\n        \"is_binary\": false,\n        \"is_primary\": false,\n        \"is_unique\": false,\n        \"label\": \"Last name\",\n        \"name\": \"last_name\",\n        \"status\": \"pending\"\n    }\n}"
+				},
+				{
+					"name": "Property - Add user password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"property\": {\n\t\t\"name\": \"password\",\n\t\t\"field_name\": \"password\",\n\t\t\"label\": \"Password\",\n\t\t\"status\": \"pending\",\n\t\t\"type\": \"password\",\n\t\t\"is_primary\": false, \n\t\t\"is_binary\": false, \n\t\t\"is_autogenerated\": false,\n\t\t\"is_unique\": true,\n\t\t\"entity_id\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{api_host}}/properties",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"properties"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "176"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 24 Nov 2018 13:30:25 GMT"
+						},
+						{
+							"key": "location",
+							"value": "/api/properties/4"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "2ll153lb99cbtmd4gg0003t1"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"field_name\": \"password\",\n        \"id\": 4,\n        \"is_autogenerated\": false,\n        \"is_binary\": false,\n        \"is_primary\": false,\n        \"is_unique\": true,\n        \"label\": \"Password\",\n        \"name\": \"password\",\n        \"status\": \"pending\"\n    }\n}"
+				},
+				{
+					"name": "Property - Add user first name",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"property\": {\n\t\t\"name\": \"first_name\",\n\t\t\"field_name\": \"first_name\",\n\t\t\"label\": \"First name\",\n\t\t\"status\": \"pending\",\n\t\t\"is_primary\": false, \n\t\t\"is_binary\": false, \n\t\t\"is_autogenerated\": false,\n\t\t\"is_unique\": false,\n\t\t\"entity_id\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{api_host}}/properties",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"properties"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "183"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 24 Nov 2018 11:57:36 GMT"
+						},
+						{
+							"key": "location",
+							"value": "/api/properties/1"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "2ll0qvg0ohpkapon1k0001l3"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"field_name\": \"first_name\",\n        \"id\": 1,\n        \"is_autogenerated\": false,\n        \"is_binary\": false,\n        \"is_primary\": false,\n        \"is_unique\": false,\n        \"label\": \"First name\",\n        \"name\": \"first_name\",\n        \"status\": \"pending\"\n    }\n}"
+				},
+				{
+					"name": "Property - Add user email",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"property\": {\n\t\t\"name\": \"email\",\n\t\t\"field_name\": \"email\",\n\t\t\"label\": \"Email Address\",\n\t\t\"status\": \"pending\",\n\t\t\"type\": \"string\",\n\t\t\"is_primary\": false, \n\t\t\"is_binary\": false, \n\t\t\"is_autogenerated\": false,\n\t\t\"is_unique\": true,\n\t\t\"entity_id\": 1\n\t}\n}"
+						},
+						"url": {
+							"raw": "{{api_host}}/properties",
+							"host": [
+								"{{api_host}}"
+							],
+							"path": [
+								"properties"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "cache-control",
+							"value": "max-age=0, private, must-revalidate"
+						},
+						{
+							"key": "content-length",
+							"value": "175"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "date",
+							"value": "Sat, 24 Nov 2018 13:31:53 GMT"
+						},
+						{
+							"key": "location",
+							"value": "/api/properties/5"
+						},
+						{
+							"key": "server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "x-request-id",
+							"value": "2ll158o971igr96f3g0003u1"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"field_name\": \"email\",\n        \"id\": 5,\n        \"is_autogenerated\": false,\n        \"is_binary\": false,\n        \"is_primary\": false,\n        \"is_unique\": true,\n        \"label\": \"Email Address\",\n        \"name\": \"email\",\n        \"status\": \"pending\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/properties/: property_id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"property\": {\n\t\t\"name\": \"user\",\n\t\t\"table_name\": \"users\",\n\t\t\"status\": \"approved\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "{{api_host}}/properties/:property_id",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"properties",
+						":property_id"
+					],
+					"variable": [
+						{
+							"key": "property_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/api/properties/: property_id",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{api_host}}/properties/:property_id",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"properties",
+						":property_id"
+					],
+					"variable": [
+						{
+							"key": "property_id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fd552fee-6694-421c-9750-54c2fc2f5c7f",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "4c4a34e1-a48c-48e3-bca3-e7077bab262c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "df70edfc-57e6-49d0-afa3-dcceb234afba",
+			"key": "api_host",
+			"value": "http://localhost:4000/api",
+			"type": "string"
+		}
+	]
+}
