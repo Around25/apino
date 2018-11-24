@@ -6,12 +6,12 @@ Apino is a resilient backend as a service system that can scale with your applic
 Usage
 =====
 
-```bash
-# start the database
-docker-compose -p apino up -d
-# start the apino server
-mix phx.server
-```
+  ```bash
+  # start the database
+  docker-compose -p apino up -d
+  # start the apino server
+  mix phx.server
+  ```
 
 Architecture
 ============
