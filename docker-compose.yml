@@ -1,0 +1,12 @@
+version: '3.2'
+services:
+  database:
+    image: postgres
+    restart: always
+    ports:
+      - "15432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: apino_dev
+
