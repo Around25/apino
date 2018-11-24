@@ -7,5 +7,7 @@ defmodule ApinoWeb.Router do
 
   scope "/api", ApinoWeb do
     pipe_through :api
+    resources "/entities", EntityController, except: [:new, :edit]
+    resources "/properties", PropertyController, except: [:new, :edit]
   end
 end
