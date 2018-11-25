@@ -7,33 +7,9 @@ defmodule Apino.Generator do
 
   defmacro __using__(_env) do
     quote do
-      @behaviour unquote(__MODULE__)
       import unquote(__MODULE__)
-      # import Mix.Generator
-      # Module.register_attribute(__MODULE__, :templates, accumulate: true)
-      # @before_compile unquote(__MODULE__)
     end
   end
-
-  # defmacro __before_compile__(env) do
-  #   root = Path.expand("../../templates", __DIR__)
-  #   IO.inspect Module.get_attribute(env.module, :templates)
-  #   quote do end
-  #   templates_ast = for {name, mappings} <- Module.get_attribute(env.module, :templates) do
-  #     for {format, source, _, _} <- mappings, format != :keep do
-  #       path = Path.join(root, source)
-  #       quote do
-  #         @external_resource unquote(path)
-  #         def render(unquote(name), unquote(source)), do: unquote(File.read!(path))
-  #       end
-  #     end
-  #   end
-
-  #   quote do
-  #     unquote(templates_ast)
-  #     def template_files(name), do: Keyword.fetch!(@templates, name)
-  #   end
-  # end
 
   def render(_name, source), do: File.read!(source)
 
