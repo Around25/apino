@@ -34,15 +34,17 @@ Usage
 First create the database and start the application.
 
   ```bash
-  # start the database
+  # start the postgres database on port 15432 using Docker or locally with the same details
   docker-compose -p apino up -d
   # start the apino server
   mix phx.server
   ```
 
 Then use the information in the /docs folder to call the API and define entities and properties.
-A postman collection is available in the folder with request/response examples and a db export 
-in CSV format shows my test configuration.
+
+A Postman collection is available in the folder with request/response examples and a db export 
+in CSV format shows my test configuration. You can download postman from their 
+website https://www.getpostman.com/ or you can also run the endpoints using curl.
 
 Use the /api/publish endpoint to generate the app based on your database entity/property configuration.
 
