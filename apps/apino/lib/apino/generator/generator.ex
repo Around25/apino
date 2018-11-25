@@ -19,7 +19,7 @@ defmodule Apino.Generator do
     mapping = templates[name]
     for {format, source, project_location, target_path} <- mapping do
       target = Project.join_path(project, project_location, target_path)
-      source = Path.join(@apino_templates, source) |> IO.inspect
+      source = Path.join(@apino_templates, source)
 
       case format do
         :keep ->

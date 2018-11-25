@@ -40,7 +40,7 @@ defmodule Apino.Generator.CreateApp do
       {:eex,  "app_web/lib/app_web/router.ex",                :project, ":web_app/lib/:web_app/router.ex"},
       {:eex,  "app_web/lib/app_web/gettext.ex",               :project, ":web_app/lib/:web_app/gettext.ex"},
       {:eex,  "app_web/priv/gettext/en/LC_MESSAGES/errors.po",:project, ":web_app/priv/gettext/en/LC_MESSAGES/errors.po"},
-      {:eex,  "app_web/priv/gettext/errors.pot",                       :project, ":web_app/priv/gettext/errors.pot"},
+      {:eex,  "app_web/priv/gettext/errors.pot",              :project, ":web_app/priv/gettext/errors.pot"},
       {:eex,  "app_web/lib/app_web.ex",                       :project, ":web_app/lib/:web_app.ex"},
       {:eex,  "app_web/mix.exs",                              :project, ":web_app/mix.exs"},
       {:eex,  "app_web/README.md",                            :project, ":web_app/README.md"},
@@ -51,7 +51,7 @@ defmodule Apino.Generator.CreateApp do
 
   def deploy(:pending), do: {:error, "Partial updates not yet implemented. Redeploy with :fresh instead."}
   def deploy(:fresh) do
-    Project.new(Generator.get_current_path, app: "app") |> IO.inspect
+    Project.new(Generator.get_current_path, app: "app")
     |> Generator.copy_from(@templates, :initial)
   end
 

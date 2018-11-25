@@ -22,6 +22,7 @@ defmodule Apino.Generator.Project do
     project_path = Path.expand(project_path)
     app = opts[:app] || Path.basename(project_path)
     app_mod = Module.concat([opts[:module] || Macro.camelize(app)])
+    web_mod = Module.concat(["#{app_mod}Web"])
 
     %Project{base_path: project_path,
              app: app,
@@ -31,8 +32,18 @@ defmodule Apino.Generator.Project do
              project_path: project_path,
              root_mod: app_mod,
              web_app: "#{app}_web",
-             web_namespace: Module.concat(["#{app_mod}Web"]),
+             web_namespace: web_mod,
              web_path: "#{project_path}/#{app}_web",
+             binding: Keyword.merge([base_path: project_path,
+              app: app,
+              app_mod: app_mod,
+              app_path: "#{project_path}/#{app}",
+              root_app: app,
+              project_path: project_path,
+              root_mod: app_mod,
+              web_app: "#{app}_web",
+              web_namespace: web_mod,
+              web_path: "#{project_path}/#{app}_web"], opts[:binding] || []),
              opts: opts}
   end
 
@@ -46,7 +57,7 @@ defmodule Apino.Generator.Project do
   end
   defp expand_path_with_bindings(path, %Project{} = project) do
     Regex.replace(recompile(~r/:[a-zA-Z0-9_]+/), path, fn ":" <> key, _ ->
-        project |> Map.fetch!(:"#{key}") |> to_string()
+        project.binding[:"#{key}"] |> to_string()
     end)
   end
 
