@@ -5,6 +5,7 @@ defmodule Apino.Generator.CreateApp do
   alias Apino.Generator
   alias Apino.Generator.Project
   alias Apino.Generator.Migration
+  alias Apino.Generator.Model
 
   @templates %{
     initial: [
@@ -56,7 +57,10 @@ defmodule Apino.Generator.CreateApp do
     # generate project structure
     Generator.copy_from(project, @templates, :initial)
     # generate migrations
-    get_entity_config |> Enum.map(&(Migration.generate(project, &1)))
+    entities = get_entity_config
+    entities |> Enum.map(&(Migration.generate(project, &1)))
+    # generate models
+    Model.generate_models(project, entities)
   end
 
   def get_entity_config() do

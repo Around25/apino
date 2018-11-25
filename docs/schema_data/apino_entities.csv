@@ -1,4 +1,4 @@
 "id","name","table_name","status","inserted_at","updated_at"
 1,"user","users","pending","2018-11-24 14:05:03","2018-11-24 14:05:03"
-2,"permission","permissions","pending","2018-11-24 14:05:18","2018-11-24 14:05:18"
 3,"role","roles","pending","2018-11-24 14:05:26","2018-11-24 14:05:26"
+2,"permission","permissions","pending","2018-11-24 14:10:18","2018-11-24 14:05:18"
