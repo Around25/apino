@@ -6,4 +6,4 @@
 6,"alias","alias","Alias","pending","string","",,FALSE,FALSE,FALSE,TRUE,3,"2018-11-24 14:07:16","2018-11-24 14:07:16"
 7,"email","email","Email Address","pending","string","",,FALSE,FALSE,FALSE,TRUE,1,"2018-11-24 14:07:48","2018-11-24 14:07:48"
 8,"password","password","Password","pending","password","",,FALSE,FALSE,FALSE,FALSE,1,"2018-11-24 14:08:26","2018-11-24 14:08:26"
-9,"permissions","permissions","Permissions","pending","has_many","","{""on_delete"": ""delete_all"", ""on_update"": ""update_all"", ""references"": ""permissions""}",FALSE,FALSE,FALSE,FALSE,3,"2018-11-24 14:18:49","2018-11-24 14:18:49"
+9,"role","role_id","","pending","reference","","{""on_delete"": ""delete_all"", ""on_update"": ""update_all"", ""references"": ""role""}",FALSE,FALSE,FALSE,FALSE,2,"2018-11-24 14:18:49","2018-11-24 14:18:49"
