@@ -21,7 +21,7 @@ TODO/Improvements
 =================
 - DONE Generate basic app/app_web file structure
 - DONE Generate migrations for entities/properties
-- IN PROGRESS Generate models for entities/properties
+- DONE Generate models for entities/properties
 - Update entities/properties based on the changes made to the db configuration instead of 
   recreating the all the generated code
 - Allow the user to change the configuration params of the generated app
