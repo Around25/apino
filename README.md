@@ -7,14 +7,26 @@ The scope is to be able to configure your API through a UI dashboard that when t
 are published will generate all the files needed the create/list/show/update/delete these
 entitites.
 
+Motivation
+==========
+
+Currently there is no framework/service for Elixir that can allow you to build applications fast
+through a user interface dedicated for non technical people or for developers who want to focus on
+building a mobile app instead of the backend, but that can be extended with new functionality as the 
+application grows with time.
+
+The goal of the project is to be the start of such as system, similar to Parse Framework, Strapi or Firebase.
+
 TODO/Improvements
 =================
 - DONE Generate basic app/app_web file structure
-- IN PROGRESS Generate entities/properties with migrations
+- DONE Generate migrations for entities/properties
+- IN PROGRESS Generate models for entities/properties
 - Update entities/properties based on the changes made to the db configuration instead of 
   recreating the all the generated code
 - Allow the user to change the configuration params of the generated app
 - Auto restart the generated apps once a new deploy was made
+- Generate the entire app outside the current application
 
 Usage
 =====
@@ -36,6 +48,9 @@ Use the /api/publish endpoint to generate the app based on your database entity/
 
 You can also start the app using `iex -S mix phx.server` and then run `Apino.Generator.CreateApp.deploy(:fresh)`.
 After the files are generated you can exit the server and restart it using `iex -S mix phx.server`.
+
+Currently the application does not overwrite any files previously generated so you will need to 
+remove the existing apps first before calling the /publish endpoint again.
 
 
 References

@@ -4,6 +4,7 @@ defmodule Apino.Generator.CreateApp do
   alias Apino.Repo
   alias Apino.Generator
   alias Apino.Generator.Project
+  alias Apino.Generator.Migration
 
   @templates %{
     initial: [
@@ -51,8 +52,11 @@ defmodule Apino.Generator.CreateApp do
 
   def deploy(:pending), do: {:error, "Partial updates not yet implemented. Redeploy with :fresh instead."}
   def deploy(:fresh) do
-    Project.new(Generator.get_current_path, app: "app")
-    |> Generator.copy_from(@templates, :initial)
+    project = Project.new(Generator.get_current_path, app: "app")
+    # generate project structure
+    Generator.copy_from(project, @templates, :initial)
+    # generate migrations
+    get_entity_config |> Enum.map(&(Migration.generate(project, &1)))
   end
 
   def get_entity_config() do
