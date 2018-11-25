@@ -3,8 +3,23 @@ Apino
 
 Apino is a resilient backend as a service system that can scale with your application.
 
+The scope is to be able to configure your API through a UI dashboard that when the changes
+are published will generate all the files needed the create/list/show/update/delete these
+entitites.
+
+TODO/Improvements
+=================
+- DONE Generate basic app/app_web file structure
+- IN PROGRESS Generate entities/properties with migrations
+- Update entities/properties based on the changes made to the db configuration instead of 
+  recreating the all the generated code
+- Allow the user to change the configuration params of the generated app
+- Auto restart the generated apps once a new deploy was made
+
 Usage
 =====
+
+First create the database and start the application.
 
   ```bash
   # start the database
@@ -13,25 +28,15 @@ Usage
   mix phx.server
   ```
 
-Architecture
-============
+Then use the information in the /docs folder to call the API and define entities and properties.
+A postman collection is available in the folder with request/response examples and a db export 
+in CSV format shows my test configuration.
 
-- Builder - allows the creation of entities/collections and definning the types, 
-  validations and triggers that will be executed with each new record.
-- Management - allows the management of data that was created with the builder
-- Admin - User interface for creating and managing the contents of the server
+Use the /api/publish endpoint to generate the app based on your database entity/property configuration.
 
-Tips
-====
+You can also start the app using `iex -S mix phx.server` and then run `Apino.Generator.CreateApp.deploy(:fresh)`.
+After the files are generated you can exit the server and restart it using `iex -S mix phx.server`.
 
-Generate the code as files and apps instead of checking the db for the filestructure for each of them.
-
-Learning
-========
-
-- IN PROGRESS https://strapi.io/documentation/3.x.x/concepts/concepts.html
-- TODO check out multiple existing libraries that can be used to build the application
-- 
 
 References
 ==========
@@ -42,12 +47,19 @@ References
 - https://stackoverflow.com/questions/46853270/dynamic-models-in-phoenix-framework
 - https://infismash.com/bootstrapping-an-api-only-backend-for-a-social-networking-app-using-elixir-f74a73b1da51
 - https://stackoverflow.com/questions/38442334/source-code-generation-in-elixir
+- https://phoenixframework.org
 
 
 Standards
 =========
 
 - https://jsonapi.org/format/
+
+Learning
+========
+
+- IN PROGRESS https://strapi.io/documentation/3.x.x/concepts/concepts.html
+- TODO check out multiple existing libraries that can be used to build the application
 
 Development steps
 =================
