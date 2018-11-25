@@ -69,7 +69,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"entity\": {\n\t\t\"name\": \"user\",\n\t\t\"table_name\": \"users\",\n\t\t\"status\": \"pending\"\n\t}\n}"
+					"raw": "{\n\t\"entity\": {\n\t\t\"name\": \"role\",\n\t\t\"table_name\": \"roles\",\n\t\t\"status\": \"pending\"\n\t}\n}"
 				},
 				"url": {
 					"raw": "{{api_host}}/entities",
@@ -735,6 +735,27 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "/api/publish",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{api_host}}/publish",
+					"host": [
+						"{{api_host}}"
+					],
+					"path": [
+						"publish"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -761,7 +782,7 @@
 	],
 	"variable": [
 		{
-			"id": "df70edfc-57e6-49d0-afa3-dcceb234afba",
+			"id": "894e7592-51f2-471d-86e9-9f55e19fac49",
 			"key": "api_host",
 			"value": "http://localhost:4000/api",
 			"type": "string"
